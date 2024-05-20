@@ -7,20 +7,21 @@
 }
 
 .tab-header-item {
-  padding: 10px 16px;
+  padding: 10px 20px;
   cursor: pointer;
   border: 1px solid #ccc;
   position: relative;
   margin-right: 2px;
-  background-color: lightgray;
+  background-color: teal;
   color: white;
   text-align: center;
 }
 .close {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 4px;
+  color: white;
 }
 .tab-header-item:hover {
-  color: blue;
+  background: blue;
 }

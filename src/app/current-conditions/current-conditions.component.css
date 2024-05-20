@@ -1,6 +1,9 @@
 .close {
   cursor: pointer;
 }
+.nav {
+  display: flex;
+}
 .flex {
   display: flex;
   justify-content: space-between;

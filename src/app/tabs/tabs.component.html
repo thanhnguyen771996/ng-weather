@@ -1,0 +1,27 @@
+<div class="tab-header">
+  @for (item of signalItems(); track $index) {
+  <div class="tab-header-item" (click)="modelChange.emit(item.id)">
+    @if (item.headerRef) {
+    <ng-container
+      [ngTemplateOutlet]="item.headerRef"
+      [ngTemplateOutletContext]="{
+                    $implicit: item.data,
+                }"
+    >
+    </ng-container>
+    } @else {
+    {{ item.label }}
+    }
+    <span class="close" (click)="removeTab(item.id, $index)">&times;</span>
+  </div>
+  }
+</div>
+@if (selectedTab(); as item) {
+<ng-container
+  [ngTemplateOutlet]="item.contentRef"
+  [ngTemplateOutletContext]="{
+                $implicit: item.data,
+            }"
+>
+</ng-container>
+}

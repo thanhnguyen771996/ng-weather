@@ -16,7 +16,7 @@ export class ForecastsListComponent {
     route.params.subscribe((params) => {
       this.zipcode = params.zipcode;
       const forecast = this.weatherService.storedForcast[this.zipcode];
-      if (forecast && forecast.timestamp < Date.now() - 1000 * 60 * 60 * 2) {
+      if (forecast && Date.now() - forecast.timestamp < 1000 * 60 * 60 * 2) {
         this.forecast = forecast.data;
       } else {
         weatherService.getForecast(this.zipcode).subscribe((data) => {
